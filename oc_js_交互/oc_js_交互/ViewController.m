@@ -20,8 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
-    NSURL *url = [NSURL URLWithString:@"http://www.xianhua.cn/m/?u=318719"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"xianhua" withExtension:@"html"];
+//    NSURL *url = [NSURL URLWithString:@"http://www.xianhua.cn/m/?u=318719"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
     [self.webView loadRequest:request];
@@ -52,7 +52,7 @@
                     "document.body.appendChild(img);";
     [webView stringByEvaluatingJavaScriptFromString:str4];
      */
-    
+    /*
     // 手机鲜花网代码
     NSString *str1 = @"var h1 = document.getElementsByTagName('h1')[0];"
                     "h1.innerHTML='my title';";
@@ -65,7 +65,7 @@
     // 让scrollView显示
     webView.scrollView.hidden = NO;
     self.activiteIndicater.hidden = YES;
-    
+    */
 }
 
 @end
