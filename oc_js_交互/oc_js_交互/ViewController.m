@@ -37,6 +37,12 @@
     NSString *str3 = @"var change = document.getElementsByClassName('change')[0];"
                     "change.innerHTML='thankde';";
     [webView stringByEvaluatingJavaScriptFromString:str3];
+    
+    // insert picture
+    NSString *str4 = @"var img = document.createElement('img');"
+                    "img.src = 'test.png';"
+                    "document.body.appendChild(img);";
+    [webView stringByEvaluatingJavaScriptFromString:str4];
 }
 
 @end

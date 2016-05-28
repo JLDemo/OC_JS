@@ -16,6 +16,7 @@
 		DB72114F1CF9185B00FB0EC9 /* oc_js___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB72114E1CF9185B00FB0EC9 /* oc_js___Tests.m */; };
 		DB72115A1CF9185B00FB0EC9 /* oc_js___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7211591CF9185B00FB0EC9 /* oc_js___UITests.m */; };
 		DB7211681CF918B600FB0EC9 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = DB7211671CF918B600FB0EC9 /* index.html */; };
+		DB72116A1CF91CA300FB0EC9 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7211691CF91CA300FB0EC9 /* test.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		DB7211591CF9185B00FB0EC9 /* oc_js___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "oc_js___UITests.m"; sourceTree = "<group>"; };
 		DB72115B1CF9185B00FB0EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB7211671CF918B600FB0EC9 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		DB7211691CF91CA300FB0EC9 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		DB7211341CF9185B00FB0EC9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB7211691CF91CA300FB0EC9 /* test.png */,
 				DB7211351CF9185B00FB0EC9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB7211441CF9185B00FB0EC9 /* LaunchScreen.storyboard in Resources */,
+				DB72116A1CF91CA300FB0EC9 /* test.png in Resources */,
 				DB7211681CF918B600FB0EC9 /* index.html in Resources */,
 				DB7211411CF9185B00FB0EC9 /* Assets.xcassets in Resources */,
 				DB72113F1CF9185B00FB0EC9 /* Main.storyboard in Resources */,
@@ -500,6 +504,7 @@
 				DB7211601CF9185B00FB0EC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB7211611CF9185B00FB0EC9 /* Build configuration list for PBXNativeTarget "oc_js_交互Tests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +513,7 @@
 				DB7211631CF9185B00FB0EC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB7211641CF9185B00FB0EC9 /* Build configuration list for PBXNativeTarget "oc_js_交互UITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +522,7 @@
 				DB7211661CF9185B00FB0EC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
