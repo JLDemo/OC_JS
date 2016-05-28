@@ -41,6 +41,8 @@
     // insert picture
     NSString *str4 = @"var img = document.createElement('img');"
                     "img.src = 'test.png';"
+                    "img.width = '120';"
+                    "img.height = '120';"
                     "document.body.appendChild(img);";
     [webView stringByEvaluatingJavaScriptFromString:str4];
 }
