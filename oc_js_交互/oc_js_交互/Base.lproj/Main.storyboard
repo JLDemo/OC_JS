@@ -24,16 +24,27 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="6Zg-Uv-GkS"/>
                                 </connections>
                             </webView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eun-FY-aNh">
+                                <rect key="frame" x="306" y="226" width="20" height="20"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vT2-t4-pXy">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="CzW-2F-YE7" secondAttribute="trailing" id="C1j-qY-Tk4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CzW-2F-YE7" secondAttribute="bottom" id="CAd-Xv-358"/>
+                            <constraint firstItem="eun-FY-aNh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GbX-Hj-7mQ"/>
+                            <constraint firstItem="eun-FY-aNh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nbb-Jt-Hsw"/>
                             <constraint firstItem="CzW-2F-YE7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="WMX-aF-J5G"/>
                             <constraint firstItem="CzW-2F-YE7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vIQ-R6-khb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activiteIndicater" destination="eun-FY-aNh" id="TkI-5m-arX"/>
                         <outlet property="webView" destination="CzW-2F-YE7" id="rsi-6r-AVR"/>
                     </connections>
                 </viewController>

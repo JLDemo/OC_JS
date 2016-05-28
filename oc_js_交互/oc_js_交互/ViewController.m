@@ -11,14 +11,19 @@
 @interface ViewController ()<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+
+@property (weak, nonatomic) IBOutlet UIStackView *activiteIndicater;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
+//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
+    NSURL *url = [NSURL URLWithString:@"http://www.xianhua.cn/m/?u=318719"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
     [self.webView loadRequest:request];
     
 //    NSString *str = @"12kkk2k3ookdj"
@@ -28,6 +33,7 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    /*
     // 删除
     NSString *str1 = @"var word = document.getElementById('word');";
     NSString *str2 = @"word.remove();";
@@ -45,6 +51,21 @@
                     "img.height = '120';"
                     "document.body.appendChild(img);";
     [webView stringByEvaluatingJavaScriptFromString:str4];
+     */
+    
+    // 手机鲜花网代码
+    NSString *str1 = @"var h1 = document.getElementsByTagName('h1')[0];"
+                    "h1.innerHTML='my title';";
+    [webView stringByEvaluatingJavaScriptFromString:str1];
+    
+    // 删除尾部
+    NSString *str2 = @"document.getElementById('footer').remove();";
+    [webView stringByEvaluatingJavaScriptFromString:str2];
+    
+    // 让scrollView显示
+    webView.scrollView.hidden = NO;
+    self.activiteIndicater.hidden = YES;
+    
 }
 
 @end
