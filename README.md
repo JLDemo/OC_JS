@@ -8,6 +8,6 @@ OC调用JS：http://blog.csdn.net/lwjok2007/article/details/47058101
 
 JS调用OC代码：http://blog.csdn.net/j_akill/article/details/44463301
 
- 1、js修改html页面
+1、js修改html页面
  
 2、JSContext实现，JS调用OC代码
