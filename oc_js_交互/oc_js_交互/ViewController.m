@@ -4,7 +4,7 @@
 //
 //  Created by kfz on 16/5/28.
 //  Copyright © 2016年 kongfz. All rights reserved.
-//
+//  
 
 #import "ViewController.h"
 
@@ -20,16 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
+    
     NSURL *url = [NSURL URLWithString:@"http://www.xianhua.cn/m/?u=318719"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
     [self.webView loadRequest:request];
-    
-//    NSString *str = @"12kkk2k3ookdj"
-//            "-------"
-//            "+++++++";
-//    NSLog(@"%@",str);
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -77,13 +72,6 @@
     NSString *modifyH1 = @"var h1 = document.getElementsByTagName('h1')[0];"
                         "h1.innerHTML='+++++++';";
     [webView stringByEvaluatingJavaScriptFromString:modifyH1];
-    // add image
-//    NSString *addImage = @"var image = document.createElement('img');"
-//                        "image.src ='test.png'; "
-//                        "image.width = '300'; "
-//                        "image.htight = '300'; "
-//                        "document.body.appendChild(image);";
-//    [webView stringByEvaluatingJavaScriptFromString:addImage];
     
     NSString *str4 = @"if( !document.getElementById('newImage') ) {"
     "var image = document.createElement('img');"
