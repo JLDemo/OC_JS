@@ -12,7 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
-@property (weak, nonatomic) IBOutlet UIStackView *activiteIndicater;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 
 @end
 
@@ -29,6 +30,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self modifyWeb:webView];
+    [self.activityIndicator stopAnimating];
     /*
     // 删除
     NSString *str1 = @"var word = document.getElementById('word');";
