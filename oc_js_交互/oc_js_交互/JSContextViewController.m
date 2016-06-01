@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) UIWebView *webView;
 
-@property (weak, nonatomic) UIWebView *webView2;
 @end
 
 @implementation JSContextViewController
@@ -22,20 +21,11 @@
 - (UIWebView *)webView {
     if (!_webView) {
         CGSize scSize = self.view.frame.size;
-        UIWebView *webView = [[UIWebView alloc] initWithFrame:(CGRect){{0, 20}, {scSize.width, 220}}];
+        UIWebView *webView = [[UIWebView alloc] initWithFrame:(CGRect){{0, 0}, {scSize.width, 220}}];
         [self.view addSubview:webView];
         _webView = webView;
     }
     return _webView;
-}
-- (UIWebView *)webView2 {
-    if (!_webView2) {
-        CGSize scSize = self.view.frame.size;
-        UIWebView *webView = [[UIWebView alloc] initWithFrame:(CGRect){{0, 250}, {scSize.width, 220}}];
-        [self.view addSubview:webView];
-        _webView2 = webView;
-    }
-    return _webView2;
 }
 
 - (void)viewDidLoad {

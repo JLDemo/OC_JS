@@ -48,20 +48,6 @@
                     "document.body.appendChild(img);";
     [webView stringByEvaluatingJavaScriptFromString:str4];
      */
-    /*
-    // 手机鲜花网代码
-    NSString *str1 = @"var h1 = document.getElementsByTagName('h1')[0];"
-                    "h1.innerHTML='my title';";
-    [webView stringByEvaluatingJavaScriptFromString:str1];
-    
-    // 删除尾部
-    NSString *str2 = @"document.getElementById('footer').remove();";
-    [webView stringByEvaluatingJavaScriptFromString:str2];
-    
-    // 让scrollView显示
-    webView.scrollView.hidden = NO;
-    self.activiteIndicater.hidden = YES;
-    */
 }
 
 - (void)modifyWeb:(UIWebView *)webView {
