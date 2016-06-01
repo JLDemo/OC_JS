@@ -20,8 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"xianhua" withExtension:@"html"];
-//    NSURL *url = [NSURL URLWithString:@"http://www.xianhua.cn/m/?u=318719"];
+//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
+    NSURL *url = [NSURL URLWithString:@"http://www.xianhua.cn/m/?u=318719"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
     [self.webView loadRequest:request];
@@ -33,6 +33,7 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self modifyWeb:webView];
     /*
     // 删除
     NSString *str1 = @"var word = document.getElementById('word');";
@@ -66,6 +67,33 @@
     webView.scrollView.hidden = NO;
     self.activiteIndicater.hidden = YES;
     */
+}
+
+- (void)modifyWeb:(UIWebView *)webView {
+    NSString *delFooter = @"var footer = document.getElementById('footer');"
+                        "footer.remove();";
+    [webView stringByEvaluatingJavaScriptFromString:delFooter];
+    //  document.getElementsByTagName(tagname)    blerowObject.innerHTML=HTML
+    NSString *modifyH1 = @"var h1 = document.getElementsByTagName('h1')[0];"
+                        "h1.innerHTML='+++++++';";
+    [webView stringByEvaluatingJavaScriptFromString:modifyH1];
+    // add image
+//    NSString *addImage = @"var image = document.createElement('img');"
+//                        "image.src ='test.png'; "
+//                        "image.width = '300'; "
+//                        "image.htight = '300'; "
+//                        "document.body.appendChild(image);";
+//    [webView stringByEvaluatingJavaScriptFromString:addImage];
+    
+    NSString *str4 = @"if( !document.getElementById('newImage') ) {"
+    "var image = document.createElement('img');"
+    "image.src = 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1464762937&di=db309f9e5353173fd657aa1c075515cb&src=http://cdnweb.b5m.com/web/cmsphp/article/201505/0af6a614b197efa883bbfbbe2e2078c8.jpg';"
+    "image.width = '120';"
+    "image.height = '120';"
+    "image.id='newImage';"
+    "document.body.appendChild(image);"
+    "}";
+    [webView stringByEvaluatingJavaScriptFromString:str4];
 }
 
 @end
