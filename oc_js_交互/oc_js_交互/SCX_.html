@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+			<script type="text/javascript">
+				var messageIframe=document.createElement("iframe");
+				messageIframe.style.display="none";
+				var jsBridge="kongfz://kongfz.app";
+				document.documentElement.appendChild(messageIframe);
+				function toast () {
+					var jsBridgePath=jsBridge+"/toast/";
+					var datajson={"type":10001,"callback":"","result":document.getElementById("span_info").innerText};
+					jsBridgePath=jsBridgePath+encodeURIComponent(JSON.stringify(datajson));
+					messageIframe.src=jsBridgePath;
+				}
+				
+				function loadDataFromApp(){
+					var jsBridgePath=jsBridge+"/loadData/";
+					var datajson={"type":10002,"callback":"parseDataFromApp(%s)"};
+					jsBridgePath=jsBridgePath+encodeURIComponent(JSON.stringify(datajson));
+					messageIframe.src=jsBridgePath;
+				}
+				
+				function loadImgFromApp(){
+					var jsBridgePath=jsBridge+"/loadImg/";
+					var datajson={"type":10003,"callback":"parseDataFromApp(%s)"};
+					jsBridgePath=jsBridgePath+encodeURIComponent(JSON.stringify(datajson));
+					messageIframe.src=jsBridgePath;
+				}
+				
+				function openCamera(){
+					var jsBridgePath=jsBridge+"/openCamera/";
+					var datajson={"type":10004,"callback":"parseDataFromApp(%s)"};
+					jsBridgePath=jsBridgePath+encodeURIComponent(JSON.stringify(datajson));
+					messageIframe.src=jsBridgePath;
+				}
+
+				function login(){
+					var name=document.getElementById("user_name").value;
+					var pass=document.getElementById("user_pass").value;
+					var jsBridgePath=jsBridge+"/login/";
+					var datajson={"type":10005,"callback":"parseDataFromApp(%s)","name":name,"pass":pass};
+					jsBridgePath=jsBridgePath+encodeURIComponent(JSON.stringify(datajson));
+					messageIframe.src=jsBridgePath;
+				}
+				
+				function parseDataFromApp(jsonStr){
+					jsonStr=jsonStr.toString();
+					var jsonData=JSON.parse(jsonStr);
+					switch(jsonData.type){
+						case 10002:
+						  setShowInfo(jsonData.result,"show_info");
+						  break;
+						case 10003:
+						  setImg(jsonData.result,"show_icon")
+						  break;
+						case 10004:
+						  setImg(jsonData.result,"show_camera")
+						  break;
+						case 10005:
+                        alert(1005);
+						  setShowInfo(jsonData.result,"login_note");
+						  break;
+					}
+				}
+				
+				function setShowInfo(info,elementId){
+					document.getElementById(elementId).innerText=info;
+				}
+				
+				function setImg(path,imgId){
+					document.getElementById(imgId).src=path;
+				}
+			</script>
+		<title>
+		</title>
+	</head>
+	<body>
+	用户名:<input  type="text" id="user_name"/><br/>
+	密&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="text" id="user_pass"  /><br />
+	<input type="submit" onclick="login()"/>
+	<span id="login_note"></span>
+	<br /><br /><br />
+		<span id="span_info">toast提醒:将网页的提示消息传递给app应用</span>       <input type="button" value="显示toast" onclick="toast()"/><br /><br />
+		<input type="button" value="显示app输入的文字" onclick="loadDataFromApp()"/>&nbsp;&nbsp;<span id="show_info" style="color: crimson;font-size: 18sp;"></span><br /><br />
+
+		<input type="button" value="加载图片" onclick="loadImgFromApp()"/><br />
+		<img id="show_icon" /><br />
+		<input type="button" value="拍照" onclick="openCamera()"/><br />
+		<img id="show_camera" /><br />
+		<input type="file" value="选择图片" />
+		
+	</body>
+</html>

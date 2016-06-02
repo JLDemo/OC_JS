@@ -9,6 +9,7 @@
 #import "MainTableViewController.h"
 #import "ViewController.h"
 #import "JSContextViewController.h"
+#import "SCXTestViewController.h"
 
 @interface MainTableViewController ()
 
@@ -24,6 +25,7 @@
     self.dataSource = [NSMutableArray array];
     [self.dataSource addObject:@"js修改html页面"];
     [self.dataSource addObject:@"oc js交互"];
+    [self.dataSource addObject:@"春祥 同学 页面"];
     
 }
 
@@ -53,6 +55,8 @@
         return;
     }else if (indexPath.row == 1 ) {  // jscontext
         vc = [[JSContextViewController alloc] init];
+    } else if (indexPath.row == 2 ) { // 春祥 同学 页面
+        vc = [[SCXTestViewController alloc] init];
     }
     
     [self.navigationController pushViewController:vc animated:YES];

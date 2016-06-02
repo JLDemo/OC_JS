@@ -21,6 +21,8 @@
 		DB903DCD1CFEE5E40024BF2B /* JSContext.html in Resources */ = {isa = PBXBuildFile; fileRef = DB903DCB1CFEE5E40024BF2B /* JSContext.html */; };
 		DB903DCE1CFEE5E40024BF2B /* JSContext.js in Resources */ = {isa = PBXBuildFile; fileRef = DB903DCC1CFEE5E40024BF2B /* JSContext.js */; };
 		DB903DD11CFEE7700024BF2B /* JSContextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB903DD01CFEE7700024BF2B /* JSContextViewController.m */; };
+		DB903DD31CFEF1E30024BF2B /* SCX_.html in Resources */ = {isa = PBXBuildFile; fileRef = DB903DD21CFEF1E30024BF2B /* SCX_.html */; };
+		DB903DD61CFEF1F60024BF2B /* SCXTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB903DD51CFEF1F60024BF2B /* SCXTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,9 @@
 		DB903DCC1CFEE5E40024BF2B /* JSContext.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSContext.js; sourceTree = "<group>"; };
 		DB903DCF1CFEE7700024BF2B /* JSContextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSContextViewController.h; sourceTree = "<group>"; };
 		DB903DD01CFEE7700024BF2B /* JSContextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSContextViewController.m; sourceTree = "<group>"; };
+		DB903DD21CFEF1E30024BF2B /* SCX_.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SCX_.html; sourceTree = "<group>"; };
+		DB903DD41CFEF1F60024BF2B /* SCXTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCXTestViewController.h; sourceTree = "<group>"; };
+		DB903DD51CFEF1F60024BF2B /* SCXTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCXTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +128,8 @@
 				DB72113B1CF9185B00FB0EC9 /* ViewController.m */,
 				DB903DCF1CFEE7700024BF2B /* JSContextViewController.h */,
 				DB903DD01CFEE7700024BF2B /* JSContextViewController.m */,
+				DB903DD41CFEF1F60024BF2B /* SCXTestViewController.h */,
+				DB903DD51CFEF1F60024BF2B /* SCXTestViewController.m */,
 				DB72113D1CF9185B00FB0EC9 /* Main.storyboard */,
 				DB7211401CF9185B00FB0EC9 /* Assets.xcassets */,
 				DB7211421CF9185B00FB0EC9 /* LaunchScreen.storyboard */,
@@ -135,6 +142,7 @@
 		DB7211341CF9185B00FB0EC9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB903DD21CFEF1E30024BF2B /* SCX_.html */,
 				DB903DCB1CFEE5E40024BF2B /* JSContext.html */,
 				DB903DCC1CFEE5E40024BF2B /* JSContext.js */,
 				DB72116B1CF9262200FB0EC9 /* xianhua.html */,
@@ -266,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB7211441CF9185B00FB0EC9 /* LaunchScreen.storyboard in Resources */,
+				DB903DD31CFEF1E30024BF2B /* SCX_.html in Resources */,
 				DB72116C1CF9262200FB0EC9 /* xianhua.html in Resources */,
 				DB72116A1CF91CA300FB0EC9 /* test.png in Resources */,
 				DB903DCD1CFEE5E40024BF2B /* JSContext.html in Resources */,
@@ -297,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB903DCA1CFEE4580024BF2B /* MainTableViewController.m in Sources */,
+				DB903DD61CFEF1F60024BF2B /* SCXTestViewController.m in Sources */,
 				DB72113C1CF9185B00FB0EC9 /* ViewController.m in Sources */,
 				DB903DD11CFEE7700024BF2B /* JSContextViewController.m in Sources */,
 				DB7211391CF9185B00FB0EC9 /* AppDelegate.m in Sources */,
