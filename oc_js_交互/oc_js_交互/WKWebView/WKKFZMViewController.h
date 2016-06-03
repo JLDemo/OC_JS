@@ -10,4 +10,11 @@
 
 @interface WKKFZMViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIView *toolBar;
+
+@property (weak, nonatomic) IBOutlet UIButton *goBack;
+@property (weak, nonatomic) IBOutlet UIButton *goForward;
+@property (weak, nonatomic) IBOutlet UIButton *refresh;
+
+
 @end

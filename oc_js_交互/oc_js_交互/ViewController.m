@@ -7,6 +7,7 @@
 //  
 
 #import "ViewController.h"
+#import <objc/runtime.h>
 
 @interface ViewController ()<UIWebViewDelegate>
 
@@ -50,6 +51,8 @@
                     "document.body.appendChild(img);";
     [webView stringByEvaluatingJavaScriptFromString:str4];
      */
+//    [webView valueForKeyPath:@""];
+    
 }
 
 - (void)modifyWeb:(UIWebView *)webView {

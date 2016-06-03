@@ -26,11 +26,11 @@
     [super viewDidLoad];
     
     self.dataSource = [NSMutableArray array];
-    [self.dataSource addObject:@"js修改html页面"];
-    [self.dataSource addObject:@"oc js交互"];
-    [self.dataSource addObject:@"春祥 同学 页面"];
+    [self.dataSource addObject:@"UIWebView -- js修改html页面"];
+    [self.dataSource addObject:@"UIWebView -- oc js交互"];
+    [self.dataSource addObject:@"UIWebView -- 春祥 同学 页面"];
 
-    [self.dataSource addObject:@"WKWebView -- 加载html页面"];
+    [self.dataSource addObject:@"WKWebView -- 加载html页面,oc js交互"];
     [self.dataSource addObject:@"WKWebView -- 加载孔网M站"];
 //    WKWebView
 //    UIWebView
@@ -65,10 +65,11 @@
         vc = [[JSContextViewController alloc] init];
     } else if (indexPath.row == 2 ) { // 春祥 同学 页面
         vc = [[SCXTestViewController alloc] init];
-    }else if (indexPath.row == 3 ) { // WKWebView -- 加载html页面
+    }else if (indexPath.row == 3 ) { // WKWebView -- 加载html页面,oc js交互
         vc = [[WKTestViewController alloc] init];
     }else if (indexPath.row == 4 ) { // WKWebView -- 加载孔网M站
         vc = [[WKKFZMViewController alloc] init];
+        self.navigationController.navigationBarHidden = YES;
     }
     
     [self.navigationController pushViewController:vc animated:YES];

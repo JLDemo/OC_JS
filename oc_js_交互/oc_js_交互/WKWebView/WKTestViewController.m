@@ -8,7 +8,7 @@
 
 #import "WKTestViewController.h"
 #import <WebKit/WebKit.h>
-#import "JLMessageHandler.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 
 @interface WKTestViewController ()<WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
 @property (weak, nonatomic) WKWebView *webView;
@@ -32,8 +32,7 @@
         [configuration.userContentController addUserScript:script];
         
         // 添加一个名称，就可以在JS通过这个名称发送消息：
-        JLMessageHandler *handler = [[JLMessageHandler alloc] init];
-        [configuration.userContentController addScriptMessageHandler:handler name:@"TT"];
+        [configuration.userContentController addScriptMessageHandler:self name:@"TT"];
         
         WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:configuration];
         [self.view addSubview:webView];
@@ -55,18 +54,28 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
     
+    
 }
 
 - (void)alertMessage:(NSString *)message {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"消息提醒" message:message delegate:nil cancelButtonTitle:@"od" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"消息提醒" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+- (void)alertMessage:(NSString *)message title:(NSString *)title {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
 }
 
 
 #pragma -mark WKScriptMessageHandler
-//- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
-//    [self alertMessage:@"didReceiveScriptMessage"];
-//}
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    NSString *msg = nil;
+    if ( [message.body isKindOfClass:[NSString class]] ) {
+        msg = message.body;
+    }
+    [self alertMessage:msg?msg:@"JS调用OC" title:message.name];
+
+}
 
 
 #pragma -mark WKUIDelegate
@@ -109,6 +118,12 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     NSString *str = @"alert('---');";
 //    [webView evaluateJavaScript:str completionHandler:nil];
+    
+    // JSContext
+    //首先创建JSContext 对象（此处通过当前webView的键获取到jscontext）
+//    JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+//    
+//    [context evaluateScript:str];
     
 }
 
