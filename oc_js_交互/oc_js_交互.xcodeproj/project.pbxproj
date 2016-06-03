@@ -17,12 +17,16 @@
 		DB72115A1CF9185B00FB0EC9 /* oc_js___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7211591CF9185B00FB0EC9 /* oc_js___UITests.m */; };
 		DB72116A1CF91CA300FB0EC9 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7211691CF91CA300FB0EC9 /* test.png */; };
 		DB72116C1CF9262200FB0EC9 /* xianhua.html in Resources */ = {isa = PBXBuildFile; fileRef = DB72116B1CF9262200FB0EC9 /* xianhua.html */; };
+		DB7F94CA1D002090007FD5F8 /* WKTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7F94C91D002090007FD5F8 /* WKTestViewController.m */; };
+		DB7F94CC1D00489B007FD5F8 /* WKWebView_Test.html in Resources */ = {isa = PBXBuildFile; fileRef = DB7F94CB1D00489B007FD5F8 /* WKWebView_Test.html */; };
 		DB903DCA1CFEE4580024BF2B /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB903DC91CFEE4580024BF2B /* MainTableViewController.m */; };
 		DB903DCD1CFEE5E40024BF2B /* JSContext.html in Resources */ = {isa = PBXBuildFile; fileRef = DB903DCB1CFEE5E40024BF2B /* JSContext.html */; };
 		DB903DCE1CFEE5E40024BF2B /* JSContext.js in Resources */ = {isa = PBXBuildFile; fileRef = DB903DCC1CFEE5E40024BF2B /* JSContext.js */; };
 		DB903DD11CFEE7700024BF2B /* JSContextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB903DD01CFEE7700024BF2B /* JSContextViewController.m */; };
 		DB903DD31CFEF1E30024BF2B /* SCX_.html in Resources */ = {isa = PBXBuildFile; fileRef = DB903DD21CFEF1E30024BF2B /* SCX_.html */; };
 		DB903DD61CFEF1F60024BF2B /* SCXTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB903DD51CFEF1F60024BF2B /* SCXTestViewController.m */; };
+		DB9432931D0113FB0018B6F1 /* WKKFZMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9432921D0113FB0018B6F1 /* WKKFZMViewController.m */; };
+		DB9432991D011B930018B6F1 /* JLMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9432981D011B930018B6F1 /* JLMessageHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,9 @@
 		DB72115B1CF9185B00FB0EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB7211691CF91CA300FB0EC9 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		DB72116B1CF9262200FB0EC9 /* xianhua.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = xianhua.html; sourceTree = "<group>"; };
+		DB7F94C81D002090007FD5F8 /* WKTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTestViewController.h; sourceTree = "<group>"; };
+		DB7F94C91D002090007FD5F8 /* WKTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTestViewController.m; sourceTree = "<group>"; };
+		DB7F94CB1D00489B007FD5F8 /* WKWebView_Test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKWebView_Test.html; sourceTree = "<group>"; };
 		DB903DC81CFEE4580024BF2B /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		DB903DC91CFEE4580024BF2B /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		DB903DCB1CFEE5E40024BF2B /* JSContext.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JSContext.html; sourceTree = "<group>"; };
@@ -70,6 +77,10 @@
 		DB903DD21CFEF1E30024BF2B /* SCX_.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SCX_.html; sourceTree = "<group>"; };
 		DB903DD41CFEF1F60024BF2B /* SCXTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCXTestViewController.h; sourceTree = "<group>"; };
 		DB903DD51CFEF1F60024BF2B /* SCXTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCXTestViewController.m; sourceTree = "<group>"; };
+		DB9432911D0113FB0018B6F1 /* WKKFZMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKKFZMViewController.h; sourceTree = "<group>"; };
+		DB9432921D0113FB0018B6F1 /* WKKFZMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKKFZMViewController.m; sourceTree = "<group>"; };
+		DB9432971D011B930018B6F1 /* JLMessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLMessageHandler.h; sourceTree = "<group>"; };
+		DB9432981D011B930018B6F1 /* JLMessageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLMessageHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +142,7 @@
 				DB903DD41CFEF1F60024BF2B /* SCXTestViewController.h */,
 				DB903DD51CFEF1F60024BF2B /* SCXTestViewController.m */,
 				DB72113D1CF9185B00FB0EC9 /* Main.storyboard */,
+				DB7F94C71D001B01007FD5F8 /* WKWebView */,
 				DB7211401CF9185B00FB0EC9 /* Assets.xcassets */,
 				DB7211421CF9185B00FB0EC9 /* LaunchScreen.storyboard */,
 				DB7211451CF9185B00FB0EC9 /* Info.plist */,
@@ -148,6 +160,7 @@
 				DB72116B1CF9262200FB0EC9 /* xianhua.html */,
 				DB7211691CF91CA300FB0EC9 /* test.png */,
 				DB7211351CF9185B00FB0EC9 /* main.m */,
+				DB7F94CB1D00489B007FD5F8 /* WKWebView_Test.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -168,6 +181,19 @@
 				DB72115B1CF9185B00FB0EC9 /* Info.plist */,
 			);
 			path = "oc_js_交互UITests";
+			sourceTree = "<group>";
+		};
+		DB7F94C71D001B01007FD5F8 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				DB7F94C81D002090007FD5F8 /* WKTestViewController.h */,
+				DB7F94C91D002090007FD5F8 /* WKTestViewController.m */,
+				DB9432971D011B930018B6F1 /* JLMessageHandler.h */,
+				DB9432981D011B930018B6F1 /* JLMessageHandler.m */,
+				DB9432911D0113FB0018B6F1 /* WKKFZMViewController.h */,
+				DB9432921D0113FB0018B6F1 /* WKKFZMViewController.m */,
+			);
+			path = WKWebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +306,7 @@
 				DB903DCD1CFEE5E40024BF2B /* JSContext.html in Resources */,
 				DB903DCE1CFEE5E40024BF2B /* JSContext.js in Resources */,
 				DB7211411CF9185B00FB0EC9 /* Assets.xcassets in Resources */,
+				DB7F94CC1D00489B007FD5F8 /* WKWebView_Test.html in Resources */,
 				DB72113F1CF9185B00FB0EC9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,8 +332,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9432991D011B930018B6F1 /* JLMessageHandler.m in Sources */,
 				DB903DCA1CFEE4580024BF2B /* MainTableViewController.m in Sources */,
 				DB903DD61CFEF1F60024BF2B /* SCXTestViewController.m in Sources */,
+				DB9432931D0113FB0018B6F1 /* WKKFZMViewController.m in Sources */,
+				DB7F94CA1D002090007FD5F8 /* WKTestViewController.m in Sources */,
 				DB72113C1CF9185B00FB0EC9 /* ViewController.m in Sources */,
 				DB903DD11CFEE7700024BF2B /* JSContextViewController.m in Sources */,
 				DB7211391CF9185B00FB0EC9 /* AppDelegate.m in Sources */,

@@ -10,6 +10,9 @@
 #import "ViewController.h"
 #import "JSContextViewController.h"
 #import "SCXTestViewController.h"
+#import "WKTestViewController.h"
+#import "WKKFZMViewController.h"
+
 
 @interface MainTableViewController ()
 
@@ -26,6 +29,11 @@
     [self.dataSource addObject:@"js修改html页面"];
     [self.dataSource addObject:@"oc js交互"];
     [self.dataSource addObject:@"春祥 同学 页面"];
+
+    [self.dataSource addObject:@"WKWebView -- 加载html页面"];
+    [self.dataSource addObject:@"WKWebView -- 加载孔网M站"];
+//    WKWebView
+//    UIWebView
     
 }
 
@@ -57,6 +65,10 @@
         vc = [[JSContextViewController alloc] init];
     } else if (indexPath.row == 2 ) { // 春祥 同学 页面
         vc = [[SCXTestViewController alloc] init];
+    }else if (indexPath.row == 3 ) { // WKWebView -- 加载html页面
+        vc = [[WKTestViewController alloc] init];
+    }else if (indexPath.row == 4 ) { // WKWebView -- 加载孔网M站
+        vc = [[WKKFZMViewController alloc] init];
     }
     
     [self.navigationController pushViewController:vc animated:YES];

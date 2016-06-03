@@ -50,8 +50,19 @@
     if ( range.location != NSNotFound ) {
         NSString *paramStr = [urlString substringFromIndex:range.location + range.length];
         paramStr = [paramStr stringByRemovingPercentEncoding];
-        NSMutableDictionary *params = [NSJSONSerialization JSONObjectWithData:[paramStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
-        params[@"result"] = @"success logi";
+        NSDictionary *params = [NSJSONSerialization JSONObjectWithData:[paramStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        NSMutableDictionary *paramM = [NSMutableDictionary dictionary];
+        [paramM addEntriesFromDictionary:params];
+        paramM[@"result"] = @"loign success";
+        NSData *data = [NSJSONSerialization dataWithJSONObject:paramM options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        const char *s = [str cStringUsingEncoding:NSASCIIStringEncoding];
+        
+        NSString *methodF = paramM[@"callback"];
+        NSString *method = [NSString stringWithFormat:methodF, s];
+        [webView stringByEvaluatingJavaScriptFromString:method];
+        
+        
         return NO;
     }
     

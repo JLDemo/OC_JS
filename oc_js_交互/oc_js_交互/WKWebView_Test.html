@@ -12,15 +12,21 @@
         <meta name="description" content="">
                     
         <meta name="viewport" content="width=device-width; initial-scale=1.0">
-        <script type="text/javascript" src="JSContext.js">
+        <script type="text/javascript">
+            function showAlert(msg){
+                alert(msg);
+            }
+            function callOC(){
+                window.webkit.messageHandlers.TT.postMessage('this is message');
+            }
             
         </script>
                         
-                        
     </head>
     <body>
-        <button id="hallo" onclick="buttonClick()"> 点击button</button>
-    
-    </body>  
+        <input type="button" value="alert" onclick="showAlert('弹出消息')"/><br />
+        <button id="hallo" onclick="callOC()"> JS调用OC代码:TT</button> <br />
+        <p id="test">test/test</p>
+    </body>
     
 </html>
