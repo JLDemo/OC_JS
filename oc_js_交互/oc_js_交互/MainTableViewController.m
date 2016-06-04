@@ -52,6 +52,7 @@
     }
     
     cell.textLabel.text = self.dataSource[indexPath.row];
+    cell.textLabel.font = [UIFont systemFontOfSize:13];
     
     return cell;
 }

@@ -105,6 +105,9 @@
 - (IBAction)refreshClicked:(UIButton *)sender {
     [self.webView reload];
 }
+- (IBAction)toMainPage:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 
