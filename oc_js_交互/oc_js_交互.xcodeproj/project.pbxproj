@@ -17,8 +17,10 @@
 		DB72115A1CF9185B00FB0EC9 /* oc_js___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7211591CF9185B00FB0EC9 /* oc_js___UITests.m */; };
 		DB72116A1CF91CA300FB0EC9 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7211691CF91CA300FB0EC9 /* test.png */; };
 		DB72116C1CF9262200FB0EC9 /* xianhua.html in Resources */ = {isa = PBXBuildFile; fileRef = DB72116B1CF9262200FB0EC9 /* xianhua.html */; };
+		DB7EF8D11D018498009F9B24 /* WKWebView+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7EF8D01D018498009F9B24 /* WKWebView+extension.m */; };
 		DB7F94CA1D002090007FD5F8 /* WKTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7F94C91D002090007FD5F8 /* WKTestViewController.m */; };
 		DB7F94CC1D00489B007FD5F8 /* WKWebView_Test.html in Resources */ = {isa = PBXBuildFile; fileRef = DB7F94CB1D00489B007FD5F8 /* WKWebView_Test.html */; };
+		DB81CE0D1D03028D005A747F /* alertTitle.html in Resources */ = {isa = PBXBuildFile; fileRef = DB81CE0C1D03028D005A747F /* alertTitle.html */; };
 		DB903DCA1CFEE4580024BF2B /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB903DC91CFEE4580024BF2B /* MainTableViewController.m */; };
 		DB903DCD1CFEE5E40024BF2B /* JSContext.html in Resources */ = {isa = PBXBuildFile; fileRef = DB903DCB1CFEE5E40024BF2B /* JSContext.html */; };
 		DB903DCE1CFEE5E40024BF2B /* JSContext.js in Resources */ = {isa = PBXBuildFile; fileRef = DB903DCC1CFEE5E40024BF2B /* JSContext.js */; };
@@ -66,9 +68,12 @@
 		DB72115B1CF9185B00FB0EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB7211691CF91CA300FB0EC9 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		DB72116B1CF9262200FB0EC9 /* xianhua.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = xianhua.html; sourceTree = "<group>"; };
+		DB7EF8CF1D018498009F9B24 /* WKWebView+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+extension.h"; sourceTree = "<group>"; };
+		DB7EF8D01D018498009F9B24 /* WKWebView+extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+extension.m"; sourceTree = "<group>"; };
 		DB7F94C81D002090007FD5F8 /* WKTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTestViewController.h; sourceTree = "<group>"; };
 		DB7F94C91D002090007FD5F8 /* WKTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTestViewController.m; sourceTree = "<group>"; };
 		DB7F94CB1D00489B007FD5F8 /* WKWebView_Test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKWebView_Test.html; sourceTree = "<group>"; };
+		DB81CE0C1D03028D005A747F /* alertTitle.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = alertTitle.html; sourceTree = "<group>"; };
 		DB903DC81CFEE4580024BF2B /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		DB903DC91CFEE4580024BF2B /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		DB903DCB1CFEE5E40024BF2B /* JSContext.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JSContext.html; sourceTree = "<group>"; };
@@ -164,6 +169,7 @@
 				DB7211691CF91CA300FB0EC9 /* test.png */,
 				DB7211351CF9185B00FB0EC9 /* main.m */,
 				DB7F94CB1D00489B007FD5F8 /* WKWebView_Test.html */,
+				DB81CE0C1D03028D005A747F /* alertTitle.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 			children = (
 				DB9432A71D013D2E0018B6F1 /* CookieTool.h */,
 				DB9432A81D013D2E0018B6F1 /* CookieTool.m */,
+				DB7EF8CF1D018498009F9B24 /* WKWebView+extension.h */,
+				DB7EF8D01D018498009F9B24 /* WKWebView+extension.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -318,6 +326,7 @@
 				DB903DCD1CFEE5E40024BF2B /* JSContext.html in Resources */,
 				DB903DCE1CFEE5E40024BF2B /* JSContext.js in Resources */,
 				DB7211411CF9185B00FB0EC9 /* Assets.xcassets in Resources */,
+				DB81CE0D1D03028D005A747F /* alertTitle.html in Resources */,
 				DB7F94CC1D00489B007FD5F8 /* WKWebView_Test.html in Resources */,
 				DB72113F1CF9185B00FB0EC9 /* Main.storyboard in Resources */,
 			);
@@ -345,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB903DCA1CFEE4580024BF2B /* MainTableViewController.m in Sources */,
+				DB7EF8D11D018498009F9B24 /* WKWebView+extension.m in Sources */,
 				DB903DD61CFEF1F60024BF2B /* SCXTestViewController.m in Sources */,
 				DB9432931D0113FB0018B6F1 /* WKKFZMViewController.m in Sources */,
 				DB7F94CA1D002090007FD5F8 /* WKTestViewController.m in Sources */,

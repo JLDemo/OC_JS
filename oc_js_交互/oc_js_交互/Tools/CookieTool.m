@@ -16,21 +16,13 @@
 @implementation CookieTool
 
 
-+ (void)arichveConfiguration:(WKWebViewConfiguration *)configuration {
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:configuration];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:CONFIGURATION];
-}
-+ (WKWebViewConfiguration *)unArichveConfiguration {
-    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:CONFIGURATION];
-    WKWebViewConfiguration *configuration = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    if ( !configuration ) {
-        configuration = [[WKWebViewConfiguration alloc] init];
+
+
++ (void)initialize {
+    if (self == [CookieTool self]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cookieChanged) name:NSHTTPCookieManagerCookiesChangedNotification object:nil];
     }
-    return configuration;
 }
-
-
-
 + (void)cookieChanged {
     [self updateAllCookie];
 //    NSLog(@"\n\n%s",__func__);

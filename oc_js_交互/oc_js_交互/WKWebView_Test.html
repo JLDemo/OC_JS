@@ -3,7 +3,7 @@
 <html lang="en">
     
     <head>
-        
+        <title>WKWebView Test</title>
         <meta charset="utf-8">
             
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -19,6 +19,10 @@
             function callOC(){
                 window.webkit.messageHandlers.TT.postMessage('this is message');
             }
+            function alertTitle(){
+                var title = document.title;
+                return title;
+            }
             
         </script>
                         
@@ -26,6 +30,8 @@
     <body>
         <input type="button" value="alert" onclick="showAlert('弹出消息')"/><br />
         <button id="hallo" onclick="callOC()"> JS调用OC代码:TT</button> <br />
+        
+<!--        <button id="hallo" onclick="alertTitle()">alert title</button> <br />-->
         <p id="test">test/test</p>
     </body>
     

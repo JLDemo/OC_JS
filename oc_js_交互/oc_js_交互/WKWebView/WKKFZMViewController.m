@@ -9,6 +9,22 @@
 #import "WKKFZMViewController.h"
 #import <WebKit/WebKit.h>
 #import "CookieTool.h"
+#import "WKWebView+extension.h"
+
+#define TEST
+
+#ifdef TEST
+    #define URLSTRING @"http://m.kongfz.com"
+    #define FOOTER @"footer"
+#else
+    #define URLSTRING @"http://neibumwww.kongfz.com"
+    #define FOOTER @"kfz-footer"
+#endif
+
+#define TITLE_CLASS @"shop-nav-name"
+#define TITLE @"商品详情"
+
+
 
 @interface WKKFZMViewController ()<WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler, WKScriptMessageHandler>
 @property (weak, nonatomic) WKWebView *webView;
@@ -25,7 +41,12 @@
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = NO;
         configuration.userContentController = [[WKUserContentController alloc] init];
         
-        NSString *source = @"";
+        NSString *source = @"function getTitle(){"
+                            "   var title = document.getElementsByClassName('shop-nav-name')[0]; "
+                            "   return title.innerHTML; "
+                            "};";
+        
+        
         WKUserScript *script = [[WKUserScript alloc] initWithSource:source injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:YES];
         [configuration.userContentController addUserScript:script];
         
@@ -59,10 +80,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     
-    NSURL *url = [NSURL URLWithString:@"http://m.kongfz.com"];
+    NSURL *url = [NSURL URLWithString:URLSTRING];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
     self.webView.allowsBackForwardNavigationGestures = YES;
+    // 取出cookie
+//    [CookieTool setAllCookie];
     
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -87,7 +110,7 @@
 
 
 - (void)alertMessage:(NSString *)message {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"消息提醒" message:message delegate:nil cancelButtonTitle:@"od" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"消息提醒" message:message delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
     [alert show];
 }
 
@@ -124,10 +147,13 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     NSString *str = webView.URL.absoluteString;
-    NSLog(@"%@",str);
+    NSRange range = [str rangeOfString:@"myweb:imageClick:"];
+    if (range.location != NSNotFound) {
+        [self alertMessage:str];
+        decisionHandler(WKNavigationActionPolicyCancel);
+    }
     
     decisionHandler(WKNavigationActionPolicyAllow);
-    NSLog(@"%s",__func__);
 }
 
 
@@ -138,18 +164,90 @@
 
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
-    NSString *str = @"var footer = document.getElementsByClassName('footer')[0];"
-                     "footer.remove();";
-    [webView evaluateJavaScript:str completionHandler:nil];
+    // 移除 footer
+    NSString *rmFooter = [NSString stringWithFormat:@"var footer = document.getElementsByClassName('%@')[0];"
+                     "footer.remove();",FOOTER];
+    [webView evaluateJavaScript:rmFooter completionHandler:nil];
     
-    NSArray <NSHTTPCookie *>*cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
-    if (cookies.count) {
-        [self alertMessage:@"发现cookie"];
-    }
     
-    // dataStore (9.0)
+    NSString *getTitle = @"getTitle();";
+    [webView evaluateJavaScript:getTitle completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+        NSString *title = (NSString *)data;
+        if ([title isEqualToString:@"商品详情"]) {
+            [self alertMessage:@"您已到达“商品详情”页面"];
+        }
+        
+    }];
+    
+    
 }
 
+/*
+ *通过js获取htlm中图片url
+ */
+-(NSArray *)getImageUrlByJS:(WKWebView *)wkWebView
+{
+    
+    //查看大图代码
+    //js方法遍历图片添加点击事件返回图片个数
+    /*
+    static  NSString * const jsGetImages =
+    @"function getImages(){\
+    var objs = document.getElementsByClassName(\"shop-nav-name\");\
+    var imgUrlStr='';\
+    for(var i=0;i<objs.length;i++){\
+    if(i==0){\
+    if(objs[i].alt==''){\
+    imgUrlStr=objs[i].src;\
+    }\
+    }else{\
+    if(objs[i].alt==''){\
+    imgUrlStr+='#'+objs[i].src;\
+    }\
+    }\
+    objs[i].onclick=function(){\
+    if(this.alt==''){\
+    document.location=\"myweb:imageClick:\"+this.src;\
+    }\
+    };\
+    };\
+    return imgUrlStr;\
+    };";
+    */
+    
+    NSString *getTitle = @"function getTitle(){"
+                          "   var title = document.title;"
+                          "   return title; "
+                          "}";
+    
+    //用js获取全部图片
+    [wkWebView evaluateJavaScript:getTitle completionHandler:^(id Result, NSError * error) {
+        NSLog(@"js___Result==%@",Result);
+        NSLog(@"js___Error -> %@", error);
+    }];
+    
+    
+    NSString *js2=@"getTitle()";
+    
+    __block NSArray *array=[NSArray array];
+    [wkWebView evaluateJavaScript:js2 completionHandler:^(id Result, NSError * error) {
+        NSLog(@"js2__Result==%@",Result);
+        NSLog(@"js2__Error -> %@", error);
+        
+        NSString *resurlt=[NSString stringWithFormat:@"%@",Result];
+        
+        if([resurlt hasPrefix:@"#"])
+        {
+            resurlt=[resurlt substringFromIndex:1];
+        }
+        NSLog(@"result===%@",resurlt);
+        array=[resurlt componentsSeparatedByString:@"#"];
+        NSLog(@"array====%@",array);
+        [wkWebView setMethod:array];
+    }];
+    
+    return array;
+}
 
 @end
 

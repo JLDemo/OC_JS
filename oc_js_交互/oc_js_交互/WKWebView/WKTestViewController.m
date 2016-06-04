@@ -26,7 +26,7 @@
         configuration.userContentController = [[WKUserContentController alloc] init];
         
         NSString *source = @"var t = document.getElementById('test');"
-                            "t.innerHTML='哈哈哈';";
+                            "t.innerHTML='修改了页面内容';";
         /* 修改界面的JS，应加在 DocumentEnd */
         WKUserScript *script = [[WKUserScript alloc] initWithSource:source injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
         [configuration.userContentController addUserScript:script];
@@ -116,20 +116,14 @@
 
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
-    NSString *str = @"alert('---');";
 //    [webView evaluateJavaScript:str completionHandler:nil];
     
-    // JSContext
-    //首先创建JSContext 对象（此处通过当前webView的键获取到jscontext）
-//    JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-//    
-//    [context evaluateScript:str];
+    [webView evaluateJavaScript:@"alertTitle()" completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+        NSString *title = (NSString *)data;
+        title = [NSString stringWithFormat:@"页面标题：%@",title];
+        [self alertMessage:title];
+    }];
     
-}
-
-
-- (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
-    NSLog(@"%s",__func__);
 }
 
 
