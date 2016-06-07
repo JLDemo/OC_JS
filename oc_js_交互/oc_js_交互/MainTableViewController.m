@@ -12,6 +12,7 @@
 #import "SCXTestViewController.h"
 #import "WKTestViewController.h"
 #import "WKKFZMViewController.h"
+#import "KFZMainViewController.h"
 
 
 @interface MainTableViewController ()
@@ -34,7 +35,7 @@
     [self.dataSource addObject:@"WKWebView -- 加载孔网M站"];
 //    WKWebView
 //    UIWebView
-    
+    [self.dataSource addObject:@"孔网“登录”界面"];
 }
 
 
@@ -70,6 +71,9 @@
         vc = [[WKTestViewController alloc] init];
     }else if (indexPath.row == 4 ) { // WKWebView -- 加载孔网M站
         vc = [[WKKFZMViewController alloc] init];
+        self.navigationController.navigationBarHidden = YES;
+    } else if (indexPath.row == 5 ) { // 孔网“登录”界面
+        vc = [[KFZMainViewController alloc] init];
         self.navigationController.navigationBarHidden = YES;
     }
     

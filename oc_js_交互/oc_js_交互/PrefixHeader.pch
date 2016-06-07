@@ -1,0 +1,27 @@
+//
+//  PrefixHeader.pch
+//  oc_js_交互
+//
+//  Created by kfz on 16/6/7.
+//  Copyright © 2016年 kongfz. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "NetTool.h"
+
+#define SERVER @"https://login.kongfz.com"
+#define APPNAME @"IOS_KFZ_COM"
+
+/* 登录 */
+#define LOGIN @"/Interface/Sign/Login"
+
+
+/* 弹出提示框 */
+#define ALERT(msg) @"UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@\"消息提醒\" message:@\"msg\" delegate:nil cancelButtonTitle:@\"ok\" \
+                                            otherButtonTitles:nil];\
+                                            [alert show];"
+
+
+#endif /* PrefixHeader_pch */
