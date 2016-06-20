@@ -101,6 +101,9 @@
         [self.webView evaluateJavaScript:js completionHandler:^(id _Nullable data, NSError * _Nullable error) {
             NSLog(@"%@",data);
         }];
+        
+        
+        
 
     }
 }
