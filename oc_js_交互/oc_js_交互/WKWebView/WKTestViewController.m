@@ -25,11 +25,11 @@
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = NO;
         configuration.userContentController = [[WKUserContentController alloc] init];
         
-        NSString *source = @"var t = document.getElementById('test');"
-                            "t.innerHTML='修改了页面内容';";
-        /* 修改界面的JS，应加在 DocumentEnd */
-        WKUserScript *script = [[WKUserScript alloc] initWithSource:source injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
-        [configuration.userContentController addUserScript:script];
+//        NSString *source = @"var t = document.getElementById('test');"
+//                            "t.innerHTML='修改了页面内容';";
+//        /* 修改界面的JS，应加在 DocumentEnd */
+//        WKUserScript *script = [[WKUserScript alloc] initWithSource:source injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+//        [configuration.userContentController addUserScript:script];
         
         // 添加一个名称，就可以在JS通过这个名称发送消息：
         [configuration.userContentController addScriptMessageHandler:self name:@"TT"];
@@ -49,7 +49,7 @@
     self.webView.UIDelegate = self;
     
     
-//    NSURL *url = [NSURL URLWithString:@"http://www.xianhua.cn/m/?u=318719"];
+////    NSURL *url = [NSURL URLWithString:@"http://www.xianhua.cn/m/?u=318719"];
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"WKWebView_Test.html" withExtension:nil];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];

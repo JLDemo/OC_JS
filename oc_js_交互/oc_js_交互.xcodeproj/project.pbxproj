@@ -21,6 +21,8 @@
 		DB7F94CA1D002090007FD5F8 /* WKTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7F94C91D002090007FD5F8 /* WKTestViewController.m */; };
 		DB7F94CC1D00489B007FD5F8 /* WKWebView_Test.html in Resources */ = {isa = PBXBuildFile; fileRef = DB7F94CB1D00489B007FD5F8 /* WKWebView_Test.html */; };
 		DB81CE0D1D03028D005A747F /* alertTitle.html in Resources */ = {isa = PBXBuildFile; fileRef = DB81CE0C1D03028D005A747F /* alertTitle.html */; };
+		DB82CD091D0D4A6A00727358 /* WKWebViwTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB82CD071D0D4A6A00727358 /* WKWebViwTestVC.m */; };
+		DB82CD0A1D0D4A6A00727358 /* WKWebViwTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB82CD081D0D4A6A00727358 /* WKWebViwTestVC.xib */; };
 		DB903DCA1CFEE4580024BF2B /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB903DC91CFEE4580024BF2B /* MainTableViewController.m */; };
 		DB903DCD1CFEE5E40024BF2B /* JSContext.html in Resources */ = {isa = PBXBuildFile; fileRef = DB903DCB1CFEE5E40024BF2B /* JSContext.html */; };
 		DB903DCE1CFEE5E40024BF2B /* JSContext.js in Resources */ = {isa = PBXBuildFile; fileRef = DB903DCC1CFEE5E40024BF2B /* JSContext.js */; };
@@ -92,6 +94,9 @@
 		DB7F94C91D002090007FD5F8 /* WKTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTestViewController.m; sourceTree = "<group>"; };
 		DB7F94CB1D00489B007FD5F8 /* WKWebView_Test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKWebView_Test.html; sourceTree = "<group>"; };
 		DB81CE0C1D03028D005A747F /* alertTitle.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = alertTitle.html; sourceTree = "<group>"; };
+		DB82CD061D0D4A6A00727358 /* WKWebViwTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViwTestVC.h; sourceTree = "<group>"; };
+		DB82CD071D0D4A6A00727358 /* WKWebViwTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViwTestVC.m; sourceTree = "<group>"; };
+		DB82CD081D0D4A6A00727358 /* WKWebViwTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKWebViwTestVC.xib; sourceTree = "<group>"; };
 		DB903DC81CFEE4580024BF2B /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		DB903DC91CFEE4580024BF2B /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		DB903DCB1CFEE5E40024BF2B /* JSContext.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JSContext.html; sourceTree = "<group>"; };
@@ -260,6 +265,9 @@
 				DB9432911D0113FB0018B6F1 /* WKKFZMViewController.h */,
 				DB9432921D0113FB0018B6F1 /* WKKFZMViewController.m */,
 				DB94329A1D012C1C0018B6F1 /* WKKFZMViewController.xib */,
+				DB82CD061D0D4A6A00727358 /* WKWebViwTestVC.h */,
+				DB82CD071D0D4A6A00727358 /* WKWebViwTestVC.m */,
+				DB82CD081D0D4A6A00727358 /* WKWebViwTestVC.xib */,
 			);
 			path = WKWebView;
 			sourceTree = "<group>";
@@ -465,6 +473,7 @@
 				DB7211411CF9185B00FB0EC9 /* Assets.xcassets in Resources */,
 				DB81CE0D1D03028D005A747F /* alertTitle.html in Resources */,
 				DB7F94CC1D00489B007FD5F8 /* WKWebView_Test.html in Resources */,
+				DB82CD0A1D0D4A6A00727358 /* WKWebViwTestVC.xib in Resources */,
 				DB72113F1CF9185B00FB0EC9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +501,7 @@
 			files = (
 				DB903DCA1CFEE4580024BF2B /* MainTableViewController.m in Sources */,
 				DB7EF8D11D018498009F9B24 /* WKWebView+extension.m in Sources */,
+				DB82CD091D0D4A6A00727358 /* WKWebViwTestVC.m in Sources */,
 				DBE0E0581D069A0700970452 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DBE0E0551D069A0700970452 /* UIButton+AFNetworking.m in Sources */,
 				DBE0E0571D069A0700970452 /* UIProgressView+AFNetworking.m in Sources */,

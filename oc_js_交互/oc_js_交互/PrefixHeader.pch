@@ -11,11 +11,33 @@
 
 #import "NetTool.h"
 
+#define TEST_SERVER @"https://neibulogin.kongfz.com"
+//孔网会员系统
+#ifdef TEST_SERVER
+#define SERVER TEST_SERVER
+#else
 #define SERVER @"https://login.kongfz.com"
+#endif
+
+
 #define APPNAME @"IOS_KFZ_COM"
+// NSdefault key token
+#define ACCESS_TOKEN @"accessToken"
+#define REFRESH_TOKEN @"refreshToken"
+
+#define VERSION  @"1.0"
+
+#define NSDefault(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
+#define NSDefaultSave(obj, key) [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key]
+#define NSDefaultRemove(key) [[NSUserDefaults standardUserDefaults] removeObjectForKey:key]
+
 
 /* 登录 */
 #define LOGIN @"/Interface/Sign/Login"
+/* refresh token */
+#define REFRESH @"/Interface/Sign/refreshToken"
+/* 退出 */
+#define LOGOUT @"/Interface/Sign/logOut"
 
 
 /* 弹出提示框 */

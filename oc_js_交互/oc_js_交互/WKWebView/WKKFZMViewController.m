@@ -26,7 +26,7 @@
 
 
 
-@interface WKKFZMViewController ()<WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler, WKScriptMessageHandler>
+@interface WKKFZMViewController ()<WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler, WKScriptMessageHandler, UIGestureRecognizerDelegate>
 @property (weak, nonatomic) WKWebView *webView;
 @end
 
@@ -87,6 +87,26 @@
     // 取出cookie
 //    [CookieTool setAllCookie];
     
+    UILongPressGestureRecognizer *tap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
+    tap.delegate = self;
+    [self.webView addGestureRecognizer:tap];
+}
+
+- (void)tapped:(UITapGestureRecognizer *)gesture {
+    if (gesture.state != UIGestureRecognizerStateBegan) {
+        
+        CGPoint touchPoint = [gesture locationInView:self.webView];
+        NSLog(@"---------------%@",NSStringFromCGPoint(touchPoint));
+        NSString *js = [NSString stringWithFormat:@"document.elementFromPoint(%f, %f).src", touchPoint.x, touchPoint.y];
+        [self.webView evaluateJavaScript:js completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+            NSLog(@"%@",data);
+        }];
+
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
 }
 - (void)viewWillAppear:(BOOL)animated {
     [CookieTool setAllCookie];

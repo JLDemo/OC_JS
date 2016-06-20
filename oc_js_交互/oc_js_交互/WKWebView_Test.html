@@ -17,11 +17,15 @@
                 alert(msg);
             }
             function callOC(){
-                window.webkit.messageHandlers.TT.postMessage('this is message');
+<!--                App.methodName('android message');-->
+                window.webkit.messageHandlers.TT.postMessage('this is message','sencond message');
             }
-            function alertTitle(){
+            function returnTitle(){
                 var title = document.title;
-                return title;
+                window.webkit.messageHandlers.TT.postMessage(title);
+            }
+            function returnMsg() {
+                window.webkit.messageHandlers.TT.postMessage('return msg');
             }
             
         </script>
@@ -30,9 +34,11 @@
     <body>
         <input type="button" value="alert" onclick="showAlert('弹出消息')"/><br />
         <button id="hallo" onclick="callOC()"> JS调用OC代码:TT</button> <br />
-        
-<!--        <button id="hallo" onclick="alertTitle()">alert title</button> <br />-->
+        <button id="returnMessage" onclick="returnMsg()">return msg</button> <br />
+        <button id="hallo" onclick="returnTitle()">return title</button> <br />
         <p id="test">test/test</p>
+        <p id="test1">test/test</p>
+        <p id="test2">test/test</p>
     </body>
     
 </html>
